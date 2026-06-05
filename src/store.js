@@ -4,11 +4,15 @@ import os from "os";
 import { nanoid } from "nanoid";
 
 const NOTES_FILE = path.join(process.cwd(), "notes.json");
+if (!fs.existsSync(NOTES_FILE)) {
+  fs.writeFileSync(NOTES_FILE, "[]");
+}
 
 export function getNotes() {
-  if (fs.existsSync(NOTES_FILE)) return [];
+  if (!fs.existsSync(NOTES_FILE)) return [];
 
   const data = fs.readFileSync(NOTES_FILE, "utf-8");
+  if (!data.trim()) return [];
   return JSON.parse(data);
 }
 
@@ -17,34 +21,36 @@ export function writeNotes(notes) {
 }
 
 export function addNotes(text, tag = null) {
-    const notes = getNotes()
+  const notes = getNotes();
 
-    const newNote = {
-        id: nanoid(5),
-        text,
-        tag,
-        createdAt: new Date().toISOString()
-    }
+  const newNote = {
+    id: nanoid(5),
+    text,
+    tag,
+    createdAt: new Date().toISOString(),
+  };
 
-    notes.push(newNote)
-    writeNotes(notes)
-    return newNote
+  notes.push(newNote);
+  writeNotes(notes);
+  return newNote;
 }
 
 export function deleteNote(Id) {
-    const notes = getNotes()
-    const filtered = notes.filter((i) => i.id !== Id)
+  const notes = getNotes();
+  const filtered = notes.filter((i) => i.id !== Id);
 
-    if(filtered.length === notes.length) return false
-    writeNotes(filtered)
-    return true
+  if (filtered.length === notes.length) return false;
+  writeNotes(filtered);
+  return true;
 }
 
 export function searchNotes(keyword) {
-    const notes = getNotes()
-    return notes.filter((i) => i.text.toLowerCase().includes(keyword.toLowerCase()))
+  const notes = getNotes();
+  return notes.filter((i) =>
+    i.text.toLowerCase().includes(keyword.toLowerCase()),
+  );
 }
 
 export function clearNotes() {
-    writeNotes([])
+  writeNotes([]);
 }
