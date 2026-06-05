@@ -8,6 +8,8 @@ if (!fs.existsSync(NOTES_FILE)) {
   fs.writeFileSync(NOTES_FILE, "[]");
 }
 
+const addRestrict = path.join(process.cwd(), ".gitignore")
+
 export function getNotes() {
   if (!fs.existsSync(NOTES_FILE)) return [];
 
