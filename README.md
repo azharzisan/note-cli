@@ -24,7 +24,7 @@ npm install -g @azharzisan/note-cli
 ```
 
 >[!IMPORTANT]
->The Note CLI will not work if global command -g is not added. So make sure to add -g after typing npm install.
+>The Note CLI will not work if Global command `-g` is not added. So make sure to add `-g` after typing `npm install`.
 
 ## Commands
 
