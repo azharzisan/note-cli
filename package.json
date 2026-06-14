@@ -1,6 +1,6 @@
 {
   "name": "@azharzisan/note-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple project-based CLI notes app",
   "repository": {
     "type": "git",
