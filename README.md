@@ -104,12 +104,12 @@ Notes are saved in a `notes.json` file inside your **current working directory**
 ```
 flowr/
 ├── src/
-├── .notes.json     ← flowr's notes only
+├── notes.json     ← flowr's notes only
 └── package.json
 
 invoice-app/
 ├── src/
-├── .notes.json     ← invoice app's notes only
+├── notes.json     ← invoice app's notes only
 └── package.json
 ```
 
