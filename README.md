@@ -23,6 +23,9 @@ Done. Back to coding in 2 seconds. Notes are saved inside your current project f
 npm install -g @azharzisan/note-cli
 ```
 
+>[!IMPORTANT]
+>The Note CLI will not work if global command -g is not added. So make sure to add -g after typing npm install.
+
 ## Commands
 
 ### Add a note
@@ -86,7 +89,7 @@ $ note find "auth"
 │ V1StG │ fix the auth bug             │ -      │ Jun 5, 10:32 AM  │
 └───────┴──────────────────────────────┴────────┴──────────────────┘
 
-$ note find "V1StG"
+$ note rm "V1StG"
 ✔  Note "V1StG" is sucessfully deleted
 
 $ note clear
