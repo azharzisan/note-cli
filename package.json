@@ -1,6 +1,6 @@
 {
   "name": "@azharzisan/note-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple project-based CLI notes app",
   "main": "index.js",
   "scripts": {
